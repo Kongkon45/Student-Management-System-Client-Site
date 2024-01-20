@@ -1,0 +1,38 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#postId{
+    margin-left: 200px;
+}
+#EditId{
+    margin-left: 208px;
+}
+#editId{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+#PostId{
+    margin-left: 220px;
+    margin-top: 10px;
+}
+
+/* home page banner image  */
+
+.hero-section{
+    background-image: url(img/Student-Information-Management-System-_Banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 280px;
+}
+.logo{
+    width: 80px;
+    height: 40px;
+}
+.logo h1{
+    color: #fff;
+    margin-left: 10px;
+    margin-top: -5px;
+}

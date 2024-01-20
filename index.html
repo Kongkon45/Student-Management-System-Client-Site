@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <!-- tailwind css link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- style css link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- nav section start  -->
+    <section class="sticky top-0">
+        <nav class="bg-blue-500 ">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <div>
+                        <a  class="logo flex " href="#" class="text-white font-semibold text-lg">
+                            <img src="img/logo-nav.png" alt="">
+                            <h1>Student Management</h1>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="home.html" class="text-white">Home</a>
+                        <a href="#" class="text-white">Student</a>
+                        <a href="teacher.html" class="text-white">Teacher</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-500">
+            <div class="px-2 py-3 space-y-2">
+                <a href="home.html" class="block text-white">Home</a>
+                <a href="#" class="block text-white">Student</a>
+                <a href="teacher.html" class="block text-white">Teacher</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- All Student table  -->
+    <section>
+        <h1 class="text-center text-2xl font-bold underline mt-5">All Student Information</h1>
+        <div>
+            <table class="w-full mt-10">
+                <thead class="border-2 border-black">
+                    <tr>
+                        <th class="border-2 border-black">Id</th>
+                        <th class="border-2 border-black">Name</th>
+                        <th class="border-2 border-black">Roll</th>
+                        <th class="border-2 border-black">Registration Number</th>
+                        <th class="border-2 border-black">Semester</th>
+                        <th class="border-2 border-black">Shift</th>
+                        <th class="border-2 border-black">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" class="text-center">
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="grid grid-cols-2 mt-10">
+
+            <!-- student data post  -->
+            <div class="hidden" id="post">
+                <h1 id="PostId" class=" text-2xl underline font-bold">post Information</h1>
+            <div class="bg-gray-200 w-96 mx-auto my-5 py-5 px-10 rounded-md">
+                
+                <form onsubmit="studentPost(event)">
+                    <input required class="w-full border-2 border-black my-1 pl-2 rounded-md" name="name" type="text" placeholder="Enter your name...">
+                    <input required class="w-full border-2 border-black my-1 pl-2 rounded-md" name="roll" type="number" placeholder="Enter your roll...">
+                    <input required class="w-full border-2 border-black my-1 pl-2 rounded-md" name="registration" type="number" placeholder="Enter your Registration...">
+                    <input required class="w-full border-2 border-black my-1 pl-2 rounded-md" name="semester" type="text" placeholder="Enter your semester...">
+                    <input required class="w-full border-2 border-black my-1 pl-2 rounded-md" name="shift" type="text" placeholder="Enter your shift...">
+                    <button id="postId" class="bg-blue-600 py-1 px-5 text-white rounded-md my-1 " type="submit">Add Post</button>
+                </form>
+            </div>
+            </div>
+
+            <!-- Student update  -->
+            <div class="hidden" id="edit">
+                <h1 id="editId" class=" text-2xl underline font-bold">Update Information</h1>
+                <div class="bg-gray-200 w-96 mx-auto my-5 py-5 px-10 rounded-md">
+                    <form onsubmit="studentEdit(event)">
+                        <input required class="w-full border-2 border-black my-1 rounded-md pl-2" name="id" type="number" placeholder="Enter your id...">
+                        <input required class="w-full border-2 border-black my-1 rounded-md pl-2" name="name" type="text" placeholder="Enter your name...">
+                        <input required class="w-full border-2 border-black my-1 rounded-md pl-2" name="roll" type="number" placeholder="Enter your roll...">
+                        <input required class="w-full border-2 border-black my-1 rounded-md pl-2" name="registration" type="number" placeholder="Enter your Registration...">
+                        <input required class="w-full border-2 border-black my-1 rounded-md pl-2" name="semester" type="text" placeholder="Enter your semester...">
+                        <input required class="w-full border-2 border-black my-1 rounded-md pl-2" name="shift" type="text" placeholder="Enter your shift...">
+                        <button id="EditId" class="bg-orange-600 py-1 px-5 text-white rounded-md my-1 " type="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
